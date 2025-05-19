@@ -1,5 +1,6 @@
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
+import { useTheme } from '../../hooks/useTheme';
 
 interface Tab {
   id: number;
@@ -18,24 +19,33 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
   activeTab,
   onTabChange,
 }) => {
+  const { theme } = useTheme();
+  
   return (
-    <div className="flex flex-wrap border-b border-[#689EB8] mb-4">
+    <div className="flex flex-nowrap overflow-x-auto border-b border-b-gray-200 mb-4">
       {tabs.map(tab => {
         const Icon = tab.icon;
         return (
           <button
             key={tab.id}
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${
               activeTab === tab.id
-                ? 'bg-[#689EB8] text-white'
-                : 'bg-[#F3F4F6] hover:bg-[#E5E7EB] text-gray-800 hover:text-[#689EB8]'
+                ? `bg-[${theme.colors.primary}] text-white`
+                : `bg-[${theme.colors.backgroundLight}] hover:bg-gray-200 text-gray-800 hover:text-[${theme.colors.primary}]`
             }`}
             onClick={() => onTabChange(tab.id)}
+            style={{
+              backgroundColor: activeTab === tab.id ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === tab.id ? 'white' : 'rgb(31, 41, 55)',
+            }}
           >
             <div className="flex items-center">
               <Icon
                 size={18}
-                className={`mr-2 ${activeTab === tab.id ? 'text-white' : 'text-[#FF5A60]'}`}
+                className="mr-2"
+                style={{
+                  color: activeTab === tab.id ? 'white' : theme.colors.secondary
+                }}
               />
               {tab.label}
             </div>

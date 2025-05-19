@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from 'react';
 import { ChevronDown, ChevronUp, Database, Cpu, Users, Layers, GitMerge, Zap, Info, Plane, Clock, DollarSign, CheckCircle, BarChart2, Target, Layout, BookOpen } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 interface AccordionItemProps {
   index: number;
@@ -11,6 +12,7 @@ interface AccordionItemProps {
 const AerospaceAITraining = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+  const { theme } = useTheme();
 
   const toggleAccordion = (index: number) => {
     if (activeAccordion === index) {
@@ -26,8 +28,12 @@ const AerospaceAITraining = () => {
       <div className="border rounded-md mb-4 overflow-hidden shadow-sm">
         <button
           className={`w-full flex items-center justify-between p-4 text-left ${
-            isActive ? 'bg-blue-900 text-white' : 'bg-white text-gray-800'
+            isActive ? `bg-[${theme.colors.primary}] text-white` : 'bg-white text-gray-800'
           }`}
+          style={{ 
+            backgroundColor: isActive ? theme.colors.primary : 'white',
+            color: isActive ? 'white' : 'rgb(31, 41, 55)'
+          }}
           onClick={() => toggleAccordion(index)}
         >
           <div className="flex items-center space-x-2">
@@ -58,49 +64,69 @@ const AerospaceAITraining = () => {
       </div>
       
       <div className="mb-6">
-        <div className="flex flex-wrap border-b border-blue-900 mb-4">
+        <div className="flex flex-nowrap overflow-x-auto border-b border-blue-900 mb-4">
           <button 
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${activeTab === 0 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${activeTab === 0 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
             onClick={() => setActiveTab(0)}
+            style={{
+              backgroundColor: activeTab === 0 ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === 0 ? 'white' : theme.colors.textPrimary
+            }}
           >
             <div className="flex items-center">
-              <BookOpen size={18} className="mr-2" />
+              <BookOpen size={18} className="mr-2" style={{ color: activeTab === 0 ? 'white' : theme.colors.secondary }} />
               Learning Objectives
             </div>
           </button>
           <button 
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${activeTab === 1 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${activeTab === 1 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
             onClick={() => setActiveTab(1)}
+            style={{
+              backgroundColor: activeTab === 1 ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === 1 ? 'white' : theme.colors.textPrimary
+            }}
           >
             <div className="flex items-center">
-              <Clock size={18} className="mr-2" />
+              <Clock size={18} className="mr-2" style={{ color: activeTab === 1 ? 'white' : theme.colors.secondary }} />
               Time Savings
             </div>
           </button>
           <button 
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${activeTab === 2 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${activeTab === 2 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
             onClick={() => setActiveTab(2)}
+            style={{
+              backgroundColor: activeTab === 2 ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === 2 ? 'white' : theme.colors.textPrimary
+            }}
           >
             <div className="flex items-center">
-              <CheckCircle size={18} className="mr-2" />
+              <CheckCircle size={18} className="mr-2" style={{ color: activeTab === 2 ? 'white' : theme.colors.secondary }} />
               Accuracy Improvement
             </div>
           </button>
           <button 
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${activeTab === 3 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${activeTab === 3 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
             onClick={() => setActiveTab(3)}
+            style={{
+              backgroundColor: activeTab === 3 ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === 3 ? 'white' : theme.colors.textPrimary
+            }}
           >
             <div className="flex items-center">
-              <DollarSign size={18} className="mr-2" />
+              <DollarSign size={18} className="mr-2" style={{ color: activeTab === 3 ? 'white' : theme.colors.secondary }} />
               ROI Calculator
             </div>
           </button>
           <button 
-            className={`px-6 py-3 cursor-pointer rounded-t-lg font-medium ${activeTab === 4 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
+            className={`px-4 py-3 cursor-pointer rounded-t-lg font-medium flex-shrink-0 whitespace-nowrap ${activeTab === 4 ? 'bg-blue-900 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`}
             onClick={() => setActiveTab(4)}
+            style={{
+              backgroundColor: activeTab === 4 ? theme.colors.primary : theme.colors.backgroundLight,
+              color: activeTab === 4 ? 'white' : theme.colors.textPrimary
+            }}
           >
             <div className="flex items-center">
-              <Target size={18} className="mr-2" />
+              <Target size={18} className="mr-2" style={{ color: activeTab === 4 ? 'white' : theme.colors.secondary }} />
               Implementation
             </div>
           </button>
