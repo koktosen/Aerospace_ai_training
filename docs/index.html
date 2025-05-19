@@ -1,21 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Aerospace_ai_training/assets/plane-0778697d.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aerospace AI Training</title>
-    <script type="module" crossorigin src="/Aerospace_ai_training/assets/index-842dc273.js"></script>
-    <link rel="stylesheet" href="/Aerospace_ai_training/assets/index-d2c78c0f.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    
-    <!-- Debug information -->
-    <div style="margin-top: 20px; padding: 20px; background: #f0f0f0; text-align: center;">
-      <p>If you're seeing this message but not the app, the React app is not loading properly.</p>
-      <p>Please check: <a href="gh-pages-test.html">Test Page</a> | <a href="dummy-index.html">Dummy Page</a></p>
-      <p>Current timestamp: <script>document.write(new Date().toISOString())</script></p>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aerospace AI Training</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+    h1 {
+      color: #0056b3;
+    }
+    section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aerospace AI Training</h1>
+    <p>Enhancing aerospace operations through AI-powered training solutions</p>
+  </header>
+
+  <section>
+    <h2>Welcome to Aerospace AI Training</h2>
+    <p>This is a static deployment of the Aerospace AI Training application. The React application should appear here when properly deployed.</p>
+    <p>This is a temporary static page that should be replaced by the actual React application once GitHub Pages deployment is working correctly.</p>
+  </section>
+
+  <section>
+    <h2>Key Benefits</h2>
+    <ul>
+      <li>Reduced training time by up to 35%</li>
+      <li>Improved accuracy in maintenance procedures</li>
+      <li>Cost-effective training solution for aerospace organizations</li>
+      <li>Adaptive learning paths based on individual progress</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ROI Calculator Example</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Traditional Training</th>
+          <th>AI-Enhanced Training</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Training Hours</td>
+          <td>120 hours</td>
+          <td>78 hours</td>
+          <td>42 hours</td>
+        </tr>
+        <tr>
+          <td>Error Rate</td>
+          <td>12%</td>
+          <td>3%</td>
+          <td>9%</td>
+        </tr>
+        <tr>
+          <td>Annual Cost</td>
+          <td>$250,000</td>
+          <td>$175,000</td>
+          <td>$75,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footer">
+    <p>Aerospace AI Training Platform</p>
+    <p>Deployment timestamp: <span id="timestamp"></span></p>
+    <script>
+      document.getElementById('timestamp').textContent = new Date().toISOString();
+    </script>
+  </div>
+</body>
 </html> 
