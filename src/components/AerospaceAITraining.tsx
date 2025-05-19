@@ -624,7 +624,7 @@ const AerospaceAITraining = () => {
                   </tbody>
                   <tfoot>
                     <tr className="bg-gray-100">
-                      <td className="py-2 px-4 border-b" colSpan="4"><strong>Total Annual Savings</strong></td>
+                      <td className="py-2 px-4 border-b" colSpan={4}><strong>Total Annual Savings</strong></td>
                       <td className="py-2 px-4 border-b font-bold text-green-600">$3,454,500</td>
                     </tr>
                   </tfoot>
